@@ -1,6 +1,6 @@
 #### Tutorial: Reusable SEO with React Helmet
 
-Description of this tutorial goes here. Used in your tutorial repo's README.md file.
+In this tutorial, we'll learn how to handle adding metadata to a React-based interface using React Helmet. We'll learn how to define a reusable component, pre-loaded with meta tags that all pages will need and see how to pass in data dynamically to render those tags with the correct values as we change pages.
 
 [Read this tutorial on The Meteor Chef](https://themeteorchef.com/tutorials/reusable-seo-with-react-helmet)  
 
