@@ -8,9 +8,14 @@ export const upsertDocument = new ValidatedMethod({
   validate: new SimpleSchema({
     _id: { type: String, optional: true },
     title: { type: String, optional: true },
+    category: { type: String, optional: true },
     body: { type: String, optional: true },
+    tags: { type: Array, optional: true },
+    'tags.$': { type: String },
+    twitter: { type: String, optional: true },
   }).validator(),
   run(document) {
+    console.log(document);
     return Documents.upsert({ _id: document._id }, { $set: document });
   },
 });

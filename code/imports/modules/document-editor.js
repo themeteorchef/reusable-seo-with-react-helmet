@@ -12,7 +12,10 @@ const handleUpsert = () => {
   const confirmation = doc && doc._id ? 'Document updated!' : 'Document added!';
   const upsert = {
     title: document.querySelector('[name="title"]').value.trim(),
+    category: document.querySelector('[name="category"]').value.trim(),
     body: document.querySelector('[name="body"]').value.trim(),
+    tags: document.querySelector('[name="tags"]').value.trim().split(','),
+    twitter: document.querySelector('[name="twitter"]').value.trim(),
   };
 
   if (doc && doc._id) upsert._id = doc._id;

@@ -7,6 +7,7 @@ import { Bert } from 'meteor/themeteorchef:bert';
 import Documents from '../../api/documents/documents';
 import { removeDocument } from '../../api/documents/methods';
 import NotFound from './NotFound';
+import SEO from '../components/SEO';
 import container from '../../modules/container';
 
 const handleEdit = (_id) => {
@@ -29,6 +30,18 @@ const handleRemove = (_id) => {
 const ViewDocument = ({ doc }) => {
   return doc ? (
     <div className="ViewDocument">
+      <SEO
+        schema="Article"
+        title={doc.title}
+        description={doc.body}
+        path={`/documents/${doc._id}`}
+        contentType="article"
+        published={doc.published}
+        updated={doc.updated}
+        category={doc.category}
+        tags={doc.tags}
+        twitter={doc.twitter}
+      />
       <div className="page-header clearfix">
         <h4 className="pull-left">{ doc && doc.title }</h4>
         <ButtonToolbar className="pull-right">
